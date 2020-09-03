@@ -70,6 +70,12 @@ public class TPGAudioPlayer: NSObject {
 
         self.setupNotifications()
     }
+
+    public func stopPlayer() {
+        self.isPlaying = false
+        self.player.seek(to: CMTime.zero)
+        self.player.pause()
+    }
     
     /// Method to be called whenever play or pause functionality is needed.
     ///
