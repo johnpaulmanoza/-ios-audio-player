@@ -13,7 +13,10 @@ Pod::Spec.new do |s|
   
     s.platform     = :ios, '8.0'
     s.requires_arc = true
+
+    s.swift_version = "5.0"
+    s.swift_versions = ['5.0']
   
-    s.source_files = 'Framework/iOSAudioPlayer/**/*'
-    s.public_header_files = 'Framework/iOSAudioPlayer/**/*.h'
+    s.source_files = 'Framework/iOSAudioPlayer/*'
+    s.public_header_files = 'Framework/iOSAudioPlayer/*.h'
   end
