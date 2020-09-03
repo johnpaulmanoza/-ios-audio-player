@@ -67,9 +67,8 @@ public class SpringboardData {
     private func updateLockScreenImage(imagePath: String) {
         if var nowPlayingInfo = MPNowPlayingInfoCenter.default().nowPlayingInfo {
             DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
-                let coverPath = Bundle.main.path(forResource: "cover", ofType: "png")!
-                let image = UIImage(contentsOfFile: imagePath) ?? UIImage(contentsOfFile: coverPath)!
-                nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: image)
+                let image = UIImage(contentsOfFile: imagePath)
+                nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: image!)
                 
                 DispatchQueue.main.async(execute: {
                     MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
