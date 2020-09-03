@@ -50,7 +50,7 @@ public class TPGAudioPlayer: NSObject {
     /// Method used to return the total duration of the player item.
     public var durationInSeconds: Double {
         get {
-            return playerDuration ?? kCMTimeZero.seconds
+            return playerDuration ?? CMTime.zero.seconds
         }
     }
 
@@ -128,7 +128,7 @@ public class TPGAudioPlayer: NSObject {
     
     public func skipDirection(skipDirection: SkipDirection, timeInterval: Double, offset: Double) {
         let skipPercentage = timeInterval / self.durationInSeconds
-        let newTime = CMTimeMakeWithSeconds(offset + ((skipDirection.rawValue * skipPercentage) * 2000.0), 100)
+        let newTime = CMTimeMakeWithSeconds(offset + ((skipDirection.rawValue * skipPercentage) * 2000.0), preferredTimescale: 100)
         
         player.seek(to: newTime) { (finished) -> Void in
             SpringboardData().updateLockScreenCurrentTime(currentTime: self.currentTimeInSeconds)
@@ -140,7 +140,7 @@ public class TPGAudioPlayer: NSObject {
     */
     
     public func seekPlayerToTime(value: Double, completion: (() -> Void)!) {
-        let newTime = CMTimeMakeWithSeconds(value, 100)
+        let newTime = CMTimeMakeWithSeconds(value, preferredTimescale: 100)
         
         player.seek(to: newTime, completionHandler: { (finished) -> Void in
             if completion != nil {
@@ -160,7 +160,7 @@ public class TPGAudioPlayer: NSObject {
     }
     
     @objc func playerDidReachEnd(_ notification: NSNotification) {
-        self.player.seek(to: kCMTimeZero)
+        self.player.seek(to: CMTime.zero)
         
         NotificationCenter.default.post(name: .playerDidReachEnd, object: nil)
     }
@@ -183,7 +183,7 @@ public class TPGAudioPlayer: NSObject {
     
     func prepareAndPlay(playerAsset: AVURLAsset, startTime: Double, completion: @escaping (() -> Void)) {
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
             UIApplication.shared.beginReceivingRemoteControlEvents()
         } catch {
             // Code to be added in case of audio session setup error
