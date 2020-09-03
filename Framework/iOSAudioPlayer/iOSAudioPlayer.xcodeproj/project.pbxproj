@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51EDC37725009B1A003C36F0 /* cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 51EDC37625009B1A003C36F0 /* cover.png */; };
 		C807E95B1C3FA0D8003D9E5B /* iOSAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = C807E95A1C3FA0D8003D9E5B /* iOSAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C807E9641C3FA0F1003D9E5B /* SpringboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C807E9621C3FA0F1003D9E5B /* SpringboardData.swift */; };
 		C807E9651C3FA0F1003D9E5B /* TPGAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C807E9631C3FA0F1003D9E5B /* TPGAudioPlayer.swift */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51EDC37625009B1A003C36F0 /* cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover.png; sourceTree = "<group>"; };
 		C807E9571C3FA0D8003D9E5B /* iOSAudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSAudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C807E95A1C3FA0D8003D9E5B /* iOSAudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSAudioPlayer.h; sourceTree = "<group>"; };
 		C807E95C1C3FA0D8003D9E5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 		C807E9591C3FA0D8003D9E5B /* iOSAudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				51EDC37625009B1A003C36F0 /* cover.png */,
 				C807E9621C3FA0F1003D9E5B /* SpringboardData.swift */,
 				C807E9631C3FA0F1003D9E5B /* TPGAudioPlayer.swift */,
 				FF9CF8032084DDD200DB8C37 /* Notifications.swift */,
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51EDC37725009B1A003C36F0 /* cover.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
