@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
   
     s.source_files = 'Framework/iOSAudioPlayer/iOSAudioPlayer/*'
     s.public_header_files = 'Framework/iOSAudioPlayer/iOSAudioPlayer/*.h'
-    sp.exclude_files = ['Framework/iOSAudioPlayer/iOSAudioPlayer/Info.plist']
+    s.exclude_files = ['Framework/iOSAudioPlayer/iOSAudioPlayer/Info.plist']
   end
