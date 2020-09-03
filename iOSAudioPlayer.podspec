@@ -16,5 +16,4 @@ Pod::Spec.new do |s|
   
     s.source_files = 'iOSAudioPlayer/**/*'
     s.public_header_files = 'iOSAudioPlayer/**/*.h'
-    s.pushed_with_swift_version = '5.0'
   end
